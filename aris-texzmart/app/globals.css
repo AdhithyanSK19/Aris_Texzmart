@@ -1,26 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary: #0C95AF;
+  --primary-hover: #075F78;
+  --secondary: #2162D4;
+  --accent-orange: #E7542E;
+  --accent-gold: #E9AF53;
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --dark-sections: #0B1722;
+  --headings: #16212B;
+  --body-text: #4B5563;
+  --borders: #E5E7EB;
+  --radius: 12px;
+  --shadow-soft: 0 8px 24px rgba(11,23,34,0.06);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--body-text);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+h1,h2,h3,h4,h5 {
+  font-family: Poppins, Inter, system-ui;
+  color: var(--headings);
+}
+
+/* Component helpers */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--borders);
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg,var(--primary),var(--secondary));
+  color: #fff;
+  border-radius: 999px;
+  padding: .75rem 1.75rem;
+  display: inline-block;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: var(--radius);
+  padding: .5rem 1rem;
+}
+
+/* Small utilities */
+.section-surface { background: var(--surface); }
+.section-dark { background: var(--dark-sections); color: #fff; }
+
+img.rounded-brand { border-radius: var(--radius); }
